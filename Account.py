@@ -15,3 +15,15 @@ class Account:
     def set_interest(self, interest):
         """Sets the interest gained for the the account"""
         self.interest = interest
+
+    # The method to calculate the interest earned based on the current balance and interest rate
+    def calculate_interest(self):
+        """Calculates interest earned"""
+        return self.balance * (self.interest_rate / 100)
+
+    # The method to update the balance with th eearned interest and return both values
+    def update_balance_with_interest(self):
+        """Updates balance with the earned interest"""
+        interest_earned = self.calculate_interest()
+        self.balance += interest_earned
+        return self.balance, interest_earned
